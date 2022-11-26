@@ -94,8 +94,7 @@ jobs:
         submodules: recursive
     - name: Install dependencies
       run: |
-        brew install libomp cgal xerces-c
-        npm install -g appdmg
+        bash scripts/${{ runner.os }}/0_setup_env.sh --dont_install_qt --dont_install_cgal_and_boost
     - name: Install Qt
       uses: jurplel/install-qt-action@v3
       with:
